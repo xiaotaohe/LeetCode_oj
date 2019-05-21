@@ -19,7 +19,7 @@ int main()
 }
 #endif
 
-//方法2：
+//方法2：str.find_first_of()
 #include<iostream>
 #include<string>
 using namespace std;
@@ -35,6 +35,27 @@ int main()
     {
         str1.erase(find,1);
         find = str1.find_first_of(str2,find);
+    }
+    cout<<str1<<endl;
+}
+
+//方法3：str.find_last_of()
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    string str1,str2,ret;
+    getline(cin,str1);
+    getline(cin,str2);
+    size_t find;
+    find = str1.find_last_of(str2);
+    while(find != string::npos)
+    {
+        str1.erase(find,1);
+        find = str1.find_last_of(str2,find);
     }
     cout<<str1<<endl;
 }
